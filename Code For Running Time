@@ -1,0 +1,12 @@
+SET SERVEROUTPUT ON
+
+DECLARE
+  curr_time1 DATE := SYSDATE;
+  curr_time2 NUMBER := dbms_utility.get_time;
+BEGIN
+  LOOP
+   EXIT WHEN SYSDATE >= curr_time1 + (10/(24*60*60));
+  END LOOP;
+  dbms_output.put_Line ('Elapsed Time = '||(dbms_utility.get_time - curr_time2)/100);
+END;
+/
