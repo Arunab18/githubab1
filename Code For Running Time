@@ -7,6 +7,6 @@ BEGIN
   LOOP
    EXIT WHEN SYSDATE >= start_time + (10/(24*60*60));
   END LOOP;
-  dbms_output.put_Line ('Elapsed Time = '||(dbms_utility.get_time - initialize_time)/100);
+  dbms_output.put_Line ('Time taken = '||(dbms_utility.get_time - initialize_time)/100);
 END;
 /
